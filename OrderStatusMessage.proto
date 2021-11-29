@@ -1,0 +1,53 @@
+syntax = "proto2";
+option java_package = "ru.vosk.sc.service.impl";
+
+message Envelop  {
+    // Описание структуры блока Заголовок
+    message Header {
+        required int32  stdVersion = 1;  //  версия Стандарта
+        required string uuID       = 2;  //  идентификатор сообщения
+        required string accessKey  = 3;  //  код аутентификации системы-поставщика
+        required int32 pdCode      = 4;  //  код типа ПД системы-поставщика
+        required int32 pdVersion   = 5;  //  номер версии типа ПД
+        required string repBegin   = 6;  //  дата и время начала отчетного интервала
+        required string repEnd     = 7;  //  дата и время окончания отчетного интервала
+        required bool   isTest     = 8;  //  признак тестового сообщения
+    }
+
+    required Header header                  = 1;  //  Объявление Заголовка
+
+    // Регистрация ответа от ведомства
+    message Payload {
+
+        required string date        = 2;		// Дата и время операции
+        required uint64 attr1       = 3;		// Id заявки
+        required string attr2       = 4;		// ФРГУ-идентификатор ОИВ
+        required string attr3       = 5;		// ФРГУ-идентификатор паспорта услуги
+        required string attr4       = 6;		// ФРГУ-идентификатор цели услуги
+        required string attr5       = 7;		// Id пользователя
+        required string attr6       = 8;		// Тип заявителя
+        required string attr7       = 9;		// Система породившая заявку
+        optional string attr8       = 10;    	// Полученный статус
+        required string attr9       = 11;    	// Регион подачи заявления
+        optional string attr10      = 12;    	// Расшифровка статуса обработки заявления в ЕПГУ
+        optional string attr11      = 13;    	// Ведомственный код статуса
+        optional string attr12      = 14;    	// Расшифровка ведомственного кода статуса
+        optional string attr13      = 15;    	// Комментарий ведомства к статусу по заявлению/услуге
+        optional string attr14      = 16;    	// Признак, указывающий на противоречивость статуса
+        optional string attr15      = 17;    	// Код подразделения в организационной структуре ведомства которое предоставляет услугу
+        optional string attr16      = 18;    	// Наименование подразделения в организационной структуре ведомства которое предоставляет услугу
+        required string attr17      = 19;    	// Тип события
+        optional string attr18      = 20;    	// Идентификатор внешней ИС
+        optional string attr19      = 21;    	// Наименование внешней ИС
+        required string attr20      = 22;    	// Идентификатор связи цели и услуги ЕПГУ
+        optional string attr21      = 23;       // Идентификатор среды
+        optional string attr22      = 24;       // Идентификатор сессии
+        optional string attr23      = 25;       // Признак получения от ведомства прилагаемых файлов
+        optional string attr24      = 26;       // Идентификатор организации (ЕЛК)
+        optional string attr25      = 27;       // Регион на форме, выбранный пользователем
+        optional string attr26      = 28;       // Справочник региона на форме
+
+    }
+
+    repeated Payload payload                 = 2;  //  Объявление Тела
+}

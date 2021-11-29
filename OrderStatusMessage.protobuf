@@ -1,0 +1,39 @@
+header {
+  stdVersion: 1
+  uuID: "81e64925-bcd7-4dad-9e62-260d8840823e"
+  accessKey: "5d2ee7bc-7344-4b5a-b458-71ec9a708087"
+  pdCode: 50
+  pdVersion: 2
+  repBegin: "20210729 14:15:14"
+  repEnd: "20210729 14:39:11"
+  isTest: false
+}
+payload {
+  date: "20210729 11:43:21"
+  attr1: 234556
+  attr2: "380170041"
+  attr3: "468"
+  attr4: "test_attr4"
+  attr5: "test_attr5"
+  attr6: "test_attr6"
+  attr7: "0"
+  attr8: "1068878479"
+  attr9: "test_attr9"
+  attr10: "test_attr10"
+  attr11: ""
+  attr12: ""
+  attr13: ""
+  attr14: ""
+  attr15: ""
+  attr16: ""
+  attr17: ""
+  attr18: ""
+  attr19: ""
+  attr20: ""
+  attr21: ""
+  attr22: ""
+  attr23: ""
+  attr24: ""
+  attr25: ""
+  attr26: ""
+}
